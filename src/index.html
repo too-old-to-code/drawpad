@@ -1,0 +1,123 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rxjs</title>
+    <style>
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      * {
+        box-sizing: content-box;
+      }
+
+      .selected {
+        border: 2px solid gold;
+      }
+      #canvas {
+        cursor: crosshair;
+        border: 5px ridge goldenrod;
+        margin: 40px;
+      }
+
+      .palette {
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 100px;
+      }
+
+      table {
+        width: 100%;
+      }
+
+      tr {
+        width: 50%;
+        height: 50px;
+      }
+      [data-color='orange'] {
+        background: orange;
+      }
+      [data-color='green'] {
+        background: green;
+      }
+      [data-color='blue'] {
+        background: blue;
+      }
+      [data-color='black'] {
+        background: black;
+      }
+      [data-color='red'] {
+        background: red;
+      }
+      [data-color='yellow'] {
+        background: yellow;
+      }
+      [data-size] > span {
+        border-radius: 50%;
+        background: black;
+        display: inline-block;
+      }
+      [data-size='1'] > span {
+        width: 1px;
+        height: 1px;
+      }
+      [data-size='2'] > span {
+        width: 2px;
+        height: 2px;
+      }
+      [data-size='4'] > span {
+        width: 4px;
+        height: 4px;
+      }
+      [data-size='8'] > span {
+        width: 8px;
+        height: 8px;
+      }
+      .brush-size {
+        width: 25%;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="palette">
+        <table>
+          <tr>
+            <td class="brush-size selected" data-size="1">
+              <span></span>
+            </td>
+            <td class="brush-size" data-size="2">
+              <span></span>
+            </td>
+            <td class="brush-size" data-size="4">
+              <span></span>
+            </td>
+            <td class="brush-size" data-size="8">
+              <span></span>
+            </td>
+          </tr>
+          <tr>
+            <td data-color="red" colspan="2"></td>
+            <td data-color="blue" colspan="2"></td>
+          </tr>
+          <tr>
+            <td data-color="green" colspan="2"></td>
+            <td data-color="yellow" colspan="2"></td>
+          </tr>
+          <tr>
+            <td data-color="orange" colspan="2"></td>
+            <td data-color="black" colspan="2" class="selected"></td>
+          </tr>
+        </table>
+      </div>
+      <canvas id="canvas" width="500" height="300"></canvas>
+    </div>
+  </body>
+</html>
